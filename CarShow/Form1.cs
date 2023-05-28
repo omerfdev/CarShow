@@ -1,4 +1,5 @@
 ﻿using System.Security.Cryptography.X509Certificates;
+using System.Windows.Forms;
 
 namespace CarShow
 {
@@ -8,17 +9,29 @@ namespace CarShow
         {
             InitializeComponent();
         }
-
+        private Araba secilenAraba;
         private void Form1_Load(object sender, EventArgs e)
         {
-            comboBoxAracTuru.Items.AddRange(System.Enum.GetNames(typeof(AracTuru)));
-            comboBoxAracMarka.Items.AddRange(System.Enum.GetNames(typeof(Marka)));
-            comboBoxAracModel.Items.AddRange(System.Enum.GetNames(typeof(Model)));
-            comboBoxSanzimanTuru.Items.AddRange(System.Enum.GetNames(typeof(SanzimanTuru)));
-            comboBoxYakitTuru.Items.AddRange(System.Enum.GetNames(typeof(YakitTuru)));
-            comboBoxKasaTipi.Items.AddRange(System.Enum.GetNames(typeof(KasaTipi)));
+            //comboBoxAracTuru.Items.AddRange(System.Enum.GetNames(typeof(AracTuru)));
+            //comboBoxAracMarka.Items.AddRange(System.Enum.GetNames(typeof(Marka)));
+            //comboBoxAracModel.Items.AddRange(System.Enum.GetNames(typeof(Model)));
+            //comboBoxSanzimanTuru.Items.AddRange(System.Enum.GetNames(typeof(SanzimanTuru)));
+            //comboBoxYakitTuru.Items.AddRange(System.Enum.GetNames(typeof(YakitTuru)));
+            //comboBoxKasaTipi.Items.AddRange(System.Enum.GetNames(typeof(KasaTipi)));
             numericUpDownAracHP.Value = 1000;
             numericUpDownAracModel.Value = 2005;
+            AracTuru[] aracTurleri = (AracTuru[])Enum.GetValues(typeof(AracTuru));
+            comboBoxAracTuru.DataSource = aracTurleri;
+            KasaTipi[] kasaTipleri = (KasaTipi[])Enum.GetValues(typeof(KasaTipi));
+            comboBoxKasaTipi.DataSource = kasaTipleri;
+            Marka[] markalar = (Marka[])Enum.GetValues(typeof(Marka));
+            comboBoxAracMarka.DataSource = markalar;
+            SanzimanTuru[] sanzimanTurleri = (SanzimanTuru[])Enum.GetValues(typeof(SanzimanTuru));
+            comboBoxSanzimanTuru.DataSource = sanzimanTurleri;
+            YakitTuru[] yakitTurleri = (YakitTuru[])Enum.GetValues(typeof(YakitTuru));
+            comboBoxYakitTuru. DataSource = yakitTurleri;
+            Model[] modeller = (Model[])Enum.GetValues(typeof(Model));
+            comboBoxAracModel.DataSource = modeller;
 
         }
 
@@ -51,12 +64,41 @@ namespace CarShow
 
         public void buttonOlustur_Click(object sender, EventArgs e)
         {
-            //numericUpDownAracHP.Value = 1000;
-            //numericUpDownAracModel.Value = 2005;
-            Araba araba = new Araba();            
-            listBox1.Items.Add(numericUpDownAracModel.Value + " " + numericUpDownAracHP.Value + " " + comboBoxAracMarka.SelectedItem + " " + comboBoxAracModel.SelectedItem + " " + comboBoxAracTuru.SelectedItem + " " + comboBoxKasaTipi.SelectedItem + " " + comboBoxSanzimanTuru.SelectedItem + " " + comboBoxYakitTuru.SelectedItem);
+            secilenAraba = new Araba
+            {
+                arabaTuru = (AracTuru)comboBoxAracTuru.SelectedItem,
+                arabaKasaTipi = (KasaTipi)comboBoxKasaTipi.SelectedItem,
+                arabaMarka = (Marka)comboBoxAracMarka.SelectedItem,
+                arabaModel = (Model)comboBoxAracModel.SelectedItem,
+                arabaSanzimanTuru = (SanzimanTuru)comboBoxSanzimanTuru.SelectedItem,
+                arabaYakitTuru = (YakitTuru)comboBoxYakitTuru.SelectedItem,
+                ModelYili = ((short)numericUpDownAracModel.Value),
+                MotorGucu = (short)numericUpDownAracModel.Value,
+            };
+
+            
+            listBox1.Items.Add(secilenAraba);
+
+           
         }
 
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        
+            if (listBox1.SelectedIndex != -1)
+            {
+                secilenAraba = listBox1.SelectedItem as Araba;
+                comboBoxAracMarka.Text = secilenAraba.arabaMarka.ToString();
+                comboBoxAracModel.Text = secilenAraba.arabaModel.ToString();
+                comboBoxKasaTipi.Text = secilenAraba.arabaKasaTipi.ToString();
+            }
+            else
+            {
+                comboBoxAracMarka.Text = secilenAraba.arabaMarka.ToString();
+                comboBoxAracModel.Text = secilenAraba.arabaModel.ToString();
+                comboBoxKasaTipi.Text = secilenAraba.arabaKasaTipi.ToString();
+            }
+        }
     }
 }
 

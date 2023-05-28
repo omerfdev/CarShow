@@ -48,6 +48,9 @@ namespace CarShow
             }
         }
 
-
+        public override string ToString()
+        {
+            return $"{arabaTuru} - {arabaMarka} - {arabaModel}";
+        }
     }
 }
