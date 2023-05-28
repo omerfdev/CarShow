@@ -51,8 +51,8 @@ namespace CarShow
 
         public void buttonOlustur_Click(object sender, EventArgs e)
         {
-            numericUpDownAracHP.Value = 1000;
-            numericUpDownAracModel.Value = 2005;
+            //numericUpDownAracHP.Value = 1000;
+            //numericUpDownAracModel.Value = 2005;
             Araba araba = new Araba();            
             listBox1.Items.Add(numericUpDownAracModel.Value + " " + numericUpDownAracHP.Value + " " + comboBoxAracMarka.SelectedItem + " " + comboBoxAracModel.SelectedItem + " " + comboBoxAracTuru.SelectedItem + " " + comboBoxKasaTipi.SelectedItem + " " + comboBoxSanzimanTuru.SelectedItem + " " + comboBoxYakitTuru.SelectedItem);
         }
