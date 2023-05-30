@@ -29,7 +29,7 @@ namespace CarShow
             SanzimanTuru[] sanzimanTurleri = (SanzimanTuru[])Enum.GetValues(typeof(SanzimanTuru));
             comboBoxSanzimanTuru.DataSource = sanzimanTurleri;
             YakitTuru[] yakitTurleri = (YakitTuru[])Enum.GetValues(typeof(YakitTuru));
-            comboBoxYakitTuru. DataSource = yakitTurleri;
+            comboBoxYakitTuru.DataSource = yakitTurleri;
             Model[] modeller = (Model[])Enum.GetValues(typeof(Model));
             comboBoxAracModel.DataSource = modeller;
 
@@ -74,17 +74,19 @@ namespace CarShow
                 arabaYakitTuru = (YakitTuru)comboBoxYakitTuru.SelectedItem,
                 ModelYili = ((short)numericUpDownAracModel.Value),
                 MotorGucu = (short)numericUpDownAracModel.Value,
+                Garanti = checkBoxGaranti.Checked,
+                aracınRengi =colorDialog1
             };
 
-            
+
             listBox1.Items.Add(secilenAraba);
 
-           
+            Araba araba = new Araba();araba.ToString(); 
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-        
+
             if (listBox1.SelectedIndex != -1)
             {
                 secilenAraba = listBox1.SelectedItem as Araba;
@@ -92,12 +94,7 @@ namespace CarShow
                 comboBoxAracModel.Text = secilenAraba.arabaModel.ToString();
                 comboBoxKasaTipi.Text = secilenAraba.arabaKasaTipi.ToString();
             }
-            else
-            {
-                comboBoxAracMarka.Text = secilenAraba.arabaMarka.ToString();
-                comboBoxAracModel.Text = secilenAraba.arabaModel.ToString();
-                comboBoxKasaTipi.Text = secilenAraba.arabaKasaTipi.ToString();
-            }
+        
         }
     }
 }

@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             groupBoxCar = new GroupBox();
-            checkBox1 = new CheckBox();
+            checkBoxGaranti = new CheckBox();
             label4 = new Label();
             buttonOlustur = new Button();
             buttonAracResim = new Button();
@@ -49,6 +49,8 @@
             comboBoxAracTuru = new ComboBox();
             listBox1 = new ListBox();
             pictureBox1 = new PictureBox();
+            colorDialog1 = new ColorDialog();
+            openFileDialog1 = new OpenFileDialog();
             groupBoxCar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDownAracHP).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownAracModel).BeginInit();
@@ -57,7 +59,7 @@
             // 
             // groupBoxCar
             // 
-            groupBoxCar.Controls.Add(checkBox1);
+            groupBoxCar.Controls.Add(checkBoxGaranti);
             groupBoxCar.Controls.Add(label4);
             groupBoxCar.Controls.Add(buttonOlustur);
             groupBoxCar.Controls.Add(buttonAracResim);
@@ -81,15 +83,15 @@
             groupBoxCar.TabStop = false;
             groupBoxCar.Text = "Cars";
             // 
-            // checkBox1
+            // checkBoxGaranti
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(158, 363);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(124, 24);
-            checkBox1.TabIndex = 16;
-            checkBox1.Text = "Garanti Olsun ";
-            checkBox1.UseVisualStyleBackColor = true;
+            checkBoxGaranti.AutoSize = true;
+            checkBoxGaranti.Location = new Point(158, 363);
+            checkBoxGaranti.Name = "checkBoxGaranti";
+            checkBoxGaranti.Size = new Size(124, 24);
+            checkBoxGaranti.TabIndex = 16;
+            checkBoxGaranti.Text = "Garanti Olsun ";
+            checkBoxGaranti.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -252,6 +254,10 @@
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
             // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -292,7 +298,9 @@
         private Button buttonOlustur;
         private Button buttonAracResim;
         private Button buttonArabaResim;
-        private CheckBox checkBox1;
+        private CheckBox checkBoxGaranti;
         private Label label4;
+        private ColorDialog colorDialog1;
+        private OpenFileDialog openFileDialog1;
     }
 }

@@ -15,6 +15,8 @@ namespace CarShow
         public Model arabaModel { get; set; }
         public SanzimanTuru arabaSanzimanTuru { get; set; }
         public YakitTuru arabaYakitTuru { get; set; }
+        public ColorDialog aracınRengi { get; set; }
+        public bool Garanti { get; set; }
 
         private short modelYili;
 
@@ -50,7 +52,7 @@ namespace CarShow
 
         public override string ToString()
         {
-            return $"{arabaTuru} - {arabaMarka} - {arabaModel}";
+            return $"{arabaTuru} - {arabaMarka} - {arabaModel} ";
         }
     }
 }
