@@ -9,9 +9,8 @@ namespace CarShow
     public enum KasaTipi
     {
         Kamyonet, 
-        Otobüs, 
-        Minibüs, 
+        Hatchback, 
         Sedan, 
-        MPV
+        
     }
 }

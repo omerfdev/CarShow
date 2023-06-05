@@ -12,7 +12,6 @@ namespace CarShow
         Ford,
         Volkswagen,
         Renault, 
-        Bmv, 
-        Honda
+              
     }
 }

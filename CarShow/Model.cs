@@ -10,11 +10,16 @@ namespace CarShow
     {
         Doblo,
         Focus,
+        Fiesta,
+        Tourneo,
+        TourneoCustom,
         Golf,
-        Passat,
+        Transpotter,
         Megane,
+        Traffic,
         Cady,
-        X5,
-        Civic
+        Fiat500,
+        Fiat500e,
+        
     }
 }

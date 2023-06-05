@@ -241,15 +241,15 @@
             listBox1.ItemHeight = 20;
             listBox1.Location = new Point(319, 24);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(728, 404);
+            listBox1.Size = new Size(595, 404);
             listBox1.TabIndex = 1;
             listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(1053, 24);
+            pictureBox1.Location = new Point(920, 24);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(436, 404);
+            pictureBox1.Size = new Size(569, 404);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;

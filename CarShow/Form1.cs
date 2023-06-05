@@ -9,6 +9,7 @@ namespace CarShow
         {
             InitializeComponent();
         }
+
         private Araba secilenAraba;
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -75,13 +76,15 @@ namespace CarShow
                 ModelYili = ((short)numericUpDownAracModel.Value),
                 MotorGucu = (short)numericUpDownAracModel.Value,
                 Garanti = checkBoxGaranti.Checked,
-                aracınRengi =colorDialog1
+                aracınRengi = colorDialog1,
+                arabaResim = buttonArabaResim.Image,
+
             };
 
-
+            pictureBox1.Image = secilenAraba.arabaResim;
             listBox1.Items.Add(secilenAraba);
 
-            Araba araba = new Araba();araba.ToString(); 
+            Araba araba = new Araba(); araba.ToString();
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -94,7 +97,7 @@ namespace CarShow
                 comboBoxAracModel.Text = secilenAraba.arabaModel.ToString();
                 comboBoxKasaTipi.Text = secilenAraba.arabaKasaTipi.ToString();
             }
-        
+
         }
     }
 }
