@@ -9,7 +9,7 @@ namespace CarShow
    
     public class Araba
     {
-        List<Araba> secilenAraba=new List<Araba>();
+       
         public AracTuru arabaTuru { get; set; }
         public KasaTipi arabaKasaTipi { get; set; }
         public Marka arabaMarka { get; set; }

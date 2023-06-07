@@ -9,8 +9,8 @@ namespace CarShow
         {
             InitializeComponent();
         }
-
-        private Araba secilenAraba;
+        List<Araba> secilenAraba = new List<Araba>();
+       
         private void Form1_Load(object sender, EventArgs e)
         {
             //comboBoxAracTuru.Items.AddRange(System.Enum.GetNames(typeof(AracTuru)));
@@ -65,7 +65,7 @@ namespace CarShow
 
         public void buttonOlustur_Click(object sender, EventArgs e)
         {
-            secilenAraba = new Araba
+             Araba araba=new Araba
             {
                 arabaTuru = (AracTuru)comboBoxAracTuru.SelectedItem,
                 arabaKasaTipi = (KasaTipi)comboBoxKasaTipi.SelectedItem,
@@ -81,10 +81,11 @@ namespace CarShow
 
             };
 
-            pictureBox1.Image = secilenAraba.arabaResim;
+           
             listBox1.Items.Add(secilenAraba);
-
-            Araba araba = new Araba(); araba.ToString();
+            secilenAraba.Add(araba);
+            araba.ToString();
+            listBox1.DataSource = secilenAraba;
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -92,10 +93,7 @@ namespace CarShow
 
             if (listBox1.SelectedIndex != -1)
             {
-                secilenAraba = listBox1.SelectedItem as Araba;
-                comboBoxAracMarka.Text = secilenAraba.arabaMarka.ToString();
-                comboBoxAracModel.Text = secilenAraba.arabaModel.ToString();
-                comboBoxKasaTipi.Text = secilenAraba.arabaKasaTipi.ToString();
+             
             }
 
         }
