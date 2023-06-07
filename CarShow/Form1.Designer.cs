@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             groupBoxCar = new GroupBox();
+            lblGarantiDurumu = new Label();
             checkBoxGaranti = new CheckBox();
             label4 = new Label();
             buttonOlustur = new Button();
@@ -59,6 +60,7 @@
             // 
             // groupBoxCar
             // 
+            groupBoxCar.Controls.Add(lblGarantiDurumu);
             groupBoxCar.Controls.Add(checkBoxGaranti);
             groupBoxCar.Controls.Add(label4);
             groupBoxCar.Controls.Add(buttonOlustur);
@@ -83,15 +85,23 @@
             groupBoxCar.TabStop = false;
             groupBoxCar.Text = "Cars";
             // 
+            // lblGarantiDurumu
+            // 
+            lblGarantiDurumu.AutoSize = true;
+            lblGarantiDurumu.Location = new Point(158, 393);
+            lblGarantiDurumu.Name = "lblGarantiDurumu";
+            lblGarantiDurumu.Size = new Size(0, 20);
+            lblGarantiDurumu.TabIndex = 17;
+            // 
             // checkBoxGaranti
             // 
             checkBoxGaranti.AutoSize = true;
             checkBoxGaranti.Location = new Point(158, 363);
             checkBoxGaranti.Name = "checkBoxGaranti";
-            checkBoxGaranti.Size = new Size(124, 24);
+            checkBoxGaranti.Size = new Size(18, 17);
             checkBoxGaranti.TabIndex = 16;
-            checkBoxGaranti.Text = "Garanti Olsun ";
             checkBoxGaranti.UseVisualStyleBackColor = true;
+            checkBoxGaranti.CheckedChanged += checkBoxGaranti_CheckedChanged;
             // 
             // label4
             // 
@@ -302,5 +312,6 @@
         private Label label4;
         private ColorDialog colorDialog1;
         private OpenFileDialog openFileDialog1;
+        private Label lblGarantiDurumu;
     }
 }

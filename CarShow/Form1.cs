@@ -10,7 +10,7 @@ namespace CarShow
             InitializeComponent();
         }
         List<Araba> secilenAraba = new List<Araba>();
-       
+
         private void Form1_Load(object sender, EventArgs e)
         {
             //comboBoxAracTuru.Items.AddRange(System.Enum.GetNames(typeof(AracTuru)));
@@ -65,7 +65,7 @@ namespace CarShow
 
         public void buttonOlustur_Click(object sender, EventArgs e)
         {
-             Araba araba=new Araba
+            Araba araba = new Araba
             {
                 arabaTuru = (AracTuru)comboBoxAracTuru.SelectedItem,
                 arabaKasaTipi = (KasaTipi)comboBoxKasaTipi.SelectedItem,
@@ -74,17 +74,17 @@ namespace CarShow
                 arabaSanzimanTuru = (SanzimanTuru)comboBoxSanzimanTuru.SelectedItem,
                 arabaYakitTuru = (YakitTuru)comboBoxYakitTuru.SelectedItem,
                 ModelYili = ((short)numericUpDownAracModel.Value),
-                MotorGucu = (short)numericUpDownAracModel.Value,
-                Garanti = checkBoxGaranti.Checked,
+                MotorGucu = (short)numericUpDownAracHP.Value,
+                Garanti = lblGarantiDurumu.Text,
                 aracınRengi = colorDialog1,
                 arabaResim = buttonArabaResim.Image,
 
             };
 
-           
-            listBox1.Items.Add(secilenAraba);
+            pictureBox1.Image = araba.arabaResim;
             secilenAraba.Add(araba);
             araba.ToString();
+            listBox1.DataSource = null;
             listBox1.DataSource = secilenAraba;
         }
 
@@ -93,9 +93,33 @@ namespace CarShow
 
             if (listBox1.SelectedIndex != -1)
             {
-             
+                comboBoxAracTuru.Text = secilenAraba[listBox1.SelectedIndex].arabaTuru.ToString();
+                comboBoxKasaTipi.Text = secilenAraba[listBox1.SelectedIndex].arabaKasaTipi.ToString();
+                comboBoxAracMarka.Text = secilenAraba[listBox1.SelectedIndex].arabaMarka.ToString();
+                comboBoxAracModel.Text = secilenAraba[listBox1.SelectedIndex].arabaModel.ToString();
+                comboBoxSanzimanTuru.Text = secilenAraba[listBox1.SelectedIndex].arabaSanzimanTuru.ToString();
+                comboBoxYakitTuru.Text = secilenAraba[listBox1.SelectedIndex].arabaYakitTuru.ToString();
+                numericUpDownAracModel.Value = secilenAraba[listBox1.SelectedIndex].ModelYili;
+                numericUpDownAracHP.Value = secilenAraba[listBox1.SelectedIndex].MotorGucu;
+
             }
 
+        }
+
+        private void checkBoxGaranti_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (checkBoxGaranti.Checked)
+            {
+                lblGarantiDurumu.Text = "Garanti Eklendi";
+                lblGarantiDurumu.BackColor = Color.Green;
+            }
+
+            else if (!checkBoxGaranti.Checked)
+            {
+                lblGarantiDurumu.Text = "Garanti Eklenmedi";
+                lblGarantiDurumu.BackColor= Color.Red;
+            }
         }
     }
 }

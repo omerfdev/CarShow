@@ -18,7 +18,7 @@ namespace CarShow
         public YakitTuru arabaYakitTuru { get; set; }
         public ColorDialog aracınRengi { get; set; }
         public Image arabaResim { get; set; }
-        public bool Garanti { get; set; }
+        public string Garanti { get; set; }
 
         private short modelYili;
 
