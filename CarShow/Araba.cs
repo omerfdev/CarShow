@@ -16,7 +16,7 @@ namespace CarShow
         public Model arabaModel { get; set; }
         public SanzimanTuru arabaSanzimanTuru { get; set; }
         public YakitTuru arabaYakitTuru { get; set; }
-        public ColorDialog aracınRengi { get; set; }
+        public Color aracınRengi { get; set; }
         public Image arabaResim { get; set; }
         public string Garanti { get; set; }
 

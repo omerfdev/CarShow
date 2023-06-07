@@ -59,6 +59,7 @@ namespace CarShow
             {
                 string selectedFilePath = openFileDialog.FileName;
                 buttonArabaResim.BackgroundImage = Image.FromFile(selectedFilePath);
+                pictureBox1.Image=Image.FromFile(selectedFilePath); 
             }
 
         }
@@ -76,8 +77,8 @@ namespace CarShow
                 ModelYili = ((short)numericUpDownAracModel.Value),
                 MotorGucu = (short)numericUpDownAracHP.Value,
                 Garanti = lblGarantiDurumu.Text,
-                aracınRengi = colorDialog1,
-                arabaResim = buttonArabaResim.Image,
+                aracınRengi = labelColor.BackColor,
+                arabaResim = buttonArabaResim.BackgroundImage,
 
             };
 
@@ -101,7 +102,8 @@ namespace CarShow
                 comboBoxYakitTuru.Text = secilenAraba[listBox1.SelectedIndex].arabaYakitTuru.ToString();
                 numericUpDownAracModel.Value = secilenAraba[listBox1.SelectedIndex].ModelYili;
                 numericUpDownAracHP.Value = secilenAraba[listBox1.SelectedIndex].MotorGucu;
-
+                labelColor.BackColor = secilenAraba[listBox1.SelectedIndex].aracınRengi;
+                pictureBox1.Image = secilenAraba[listBox1.SelectedIndex].arabaResim;
             }
 
         }
