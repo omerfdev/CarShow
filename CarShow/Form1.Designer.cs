@@ -236,6 +236,7 @@
             comboBoxAracMarka.Name = "comboBoxAracMarka";
             comboBoxAracMarka.Size = new Size(279, 28);
             comboBoxAracMarka.TabIndex = 1;
+            comboBoxAracMarka.SelectedIndexChanged += comboBoxAracMarka_SelectedIndexChanged;
             // 
             // comboBoxAracTuru
             // 

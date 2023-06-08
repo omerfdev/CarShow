@@ -88,6 +88,7 @@ namespace CarShow
             araba.ToString();
             listBox1.DataSource = null;
             listBox1.DataSource = secilenAraba;
+            Clear();
         }
         public void Clear()
         {
@@ -158,6 +159,44 @@ namespace CarShow
             {
                 lblGarantiDurumu.Text = "Garanti Eklenmedi";
                 lblGarantiDurumu.BackColor = Color.Red;
+            }
+        }
+
+        private void comboBoxAracMarka_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxAracMarka.SelectedItem != null)
+            {
+                Marka selectedMarka = (Marka)comboBoxAracMarka.SelectedItem;
+
+                if (selectedMarka == Marka.Ford)
+                {
+                    comboBoxAracModel.DataSource = Enum.GetValues(typeof(Model))
+                        .Cast<Model>()
+                        .Where(model => model == Model.Focus || model == Model.Fiesta || model == Model.Tourneo || model == Model.TourneoCustom)
+                        .ToList();
+                }
+
+                else if (selectedMarka == Marka.Volkswagen)
+                {
+                    comboBoxAracModel.DataSource = Enum.GetValues(typeof(Model))
+                        .Cast<Model>()
+                        .Where(model => model == Model.Golf || model == Model.Transpotter || model == Model.Cady )
+                        .ToList();
+                }
+                else if (selectedMarka == Marka.Renault)
+                {
+                    comboBoxAracModel.DataSource = Enum.GetValues(typeof(Model))
+                        .Cast<Model>()
+                        .Where(model => model == Model.Megane || model == Model.Traffic)
+                        .ToList();
+                }
+                else if (selectedMarka == Marka.Fiat)
+                {
+                    comboBoxAracModel.DataSource = Enum.GetValues(typeof(Model))
+                        .Cast<Model>()
+                        .Where(model => model == Model.Fiat500 || model == Model.Fiat500e || model == Model.Doblo )
+                        .ToList();
+                }
             }
         }
     }
