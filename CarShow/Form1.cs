@@ -13,6 +13,7 @@ namespace CarShow
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //Böyle de yapılabilir...
             //comboBoxAracTuru.Items.AddRange(System.Enum.GetNames(typeof(AracTuru)));
             //comboBoxAracMarka.Items.AddRange(System.Enum.GetNames(typeof(Marka)));
             //comboBoxAracModel.Items.AddRange(System.Enum.GetNames(typeof(Model)));
