@@ -60,7 +60,7 @@ namespace CarShow
             {
                 string selectedFilePath = openFileDialog.FileName;
                 buttonArabaResim.BackgroundImage = Image.FromFile(selectedFilePath);
-                pictureBox1.Image=Image.FromFile(selectedFilePath); 
+                pictureBox1.Image = Image.FromFile(selectedFilePath);
             }
 
         }
@@ -89,7 +89,43 @@ namespace CarShow
             listBox1.DataSource = null;
             listBox1.DataSource = secilenAraba;
         }
+        public void Clear()
+        {
+            foreach (Control control in Controls)
+            {
+                switch (control)
+                {
+                    case ComboBox:
+                        comboBoxAracTuru.SelectedIndex = -1;
+                        comboBoxKasaTipi.SelectedIndex = -1;
+                        comboBoxAracMarka.SelectedIndex = -1;
+                        comboBoxYakitTuru.SelectedIndex = -1;
+                        comboBoxSanzimanTuru.SelectedIndex = -1;
+                        comboBoxAracModel.SelectedIndex = -1;
+                        break;
 
+                    case NumericUpDown:
+                        numericUpDownAracModel.Value = 2005;
+                        numericUpDownAracHP.Value = 1000;
+                        break;
+
+                    case Button:
+                        buttonArabaResim.BackgroundImage = null;
+                        break;
+
+                    case PictureBox:
+                        pictureBox1.Image = null;
+                        break;
+
+                    case Label:
+                        labelColor.BackColor = Color.White;
+                        break;
+                    case CheckBox:
+                        checkBoxGaranti.Checked = true;
+                        break;
+                }
+            }
+        }
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -121,7 +157,7 @@ namespace CarShow
             else if (!checkBoxGaranti.Checked)
             {
                 lblGarantiDurumu.Text = "Garanti Eklenmedi";
-                lblGarantiDurumu.BackColor= Color.Red;
+                lblGarantiDurumu.BackColor = Color.Red;
             }
         }
     }
