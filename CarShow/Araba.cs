@@ -54,7 +54,7 @@ namespace CarShow
 
         public override string ToString()
         {
-            return $"{arabaTuru} - {arabaMarka} - {arabaModel} - {arabaKasaTipi} ";
+            return $"{this.GetType().Name} - {arabaMarka} - {arabaModel} - {arabaKasaTipi} ";
         }
     }
 }
