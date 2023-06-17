@@ -1,4 +1,6 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System.IO;
+using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 
 namespace CarShow
@@ -35,6 +37,26 @@ namespace CarShow
             Model[] modeller = (Model[])Enum.GetValues(typeof(Model));
             comboBoxAracModel.DataSource = modeller;
 
+
+            string path = @"C:\Users\omerf\source\repos\CarShow\CarShow\Image\AllCar\";
+            foreach (string image in Directory.GetFiles(path))
+            {
+                PictureBox picture = new PictureBox();
+                picture.ImageLocation = image;
+                picture.SizeMode = PictureBoxSizeMode.StretchImage;
+                picture.Width = 150;
+                picture.Height = 100;
+                picture.Click += Picture_Click;
+                flowLayoutPanel1.Controls.Add(picture);
+
+            }
+
+        }
+
+        private void Picture_Click(object? sender, EventArgs e)
+        {
+            FileInfo fi = new FileInfo(((PictureBox)sender).ImageLocation);
+            MessageBox.Show(fi.Name);
         }
 
         private void buttonAracRenk_Click(object sender, EventArgs e)
@@ -167,15 +189,15 @@ namespace CarShow
             if (comboBoxAracMarka.SelectedItem != null)
             {
                 Marka selectedMarka = (Marka)comboBoxAracMarka.SelectedItem;
-                AracTuru selectedAracTur=(AracTuru)comboBoxAracTuru.SelectedItem;
+                AracTuru selectedAracTur = (AracTuru)comboBoxAracTuru.SelectedItem;
                 if (selectedMarka == Marka.Ford)
                 {
-                    if (selectedAracTur==AracTuru.Binek)
+                    if (selectedAracTur == AracTuru.Binek)
                     {
 
                         comboBoxAracModel.DataSource = Enum.GetValues(typeof(Model))
                             .Cast<Model>()
-                            .Where(model => model == Model.Focus || model == Model.Fiesta )
+                            .Where(model => model == Model.Focus || model == Model.Fiesta)
                             .ToList();
                     }
                     else
@@ -190,12 +212,12 @@ namespace CarShow
 
                 else if (selectedMarka == Marka.Volkswagen)
                 {
-                    if (selectedAracTur==AracTuru.Binek)
+                    if (selectedAracTur == AracTuru.Binek)
                     {
 
                         comboBoxAracModel.DataSource = Enum.GetValues(typeof(Model))
                             .Cast<Model>()
-                            .Where(model => model == Model.Golf )
+                            .Where(model => model == Model.Golf)
                             .ToList();
                     }
                     else
@@ -203,45 +225,45 @@ namespace CarShow
 
                         comboBoxAracModel.DataSource = Enum.GetValues(typeof(Model))
                             .Cast<Model>()
-                            .Where(model =>  model == Model.Transpotter || model == Model.Cady)
+                            .Where(model => model == Model.Transpotter || model == Model.Cady)
                             .ToList();
                     }
                 }
                 else if (selectedMarka == Marka.Renault)
                 {
-                    if (selectedAracTur==AracTuru.Binek)
+                    if (selectedAracTur == AracTuru.Binek)
                     {
                         comboBoxAracModel.DataSource = Enum.GetValues(typeof(Model))
                         .Cast<Model>()
-                        .Where(model => model == Model.Megane )
+                        .Where(model => model == Model.Megane)
                         .ToList();
                     }
                     else
                     {
                         comboBoxAracModel.DataSource = Enum.GetValues(typeof(Model))
                         .Cast<Model>()
-                        .Where(model =>  model == Model.Traffic)
+                        .Where(model => model == Model.Traffic)
                         .ToList();
                     }
-                    
+
                 }
                 else if (selectedMarka == Marka.Fiat)
                 {
-                    if (selectedAracTur==AracTuru.Binek)
+                    if (selectedAracTur == AracTuru.Binek)
                     {
                         comboBoxAracModel.DataSource = Enum.GetValues(typeof(Model))
                         .Cast<Model>()
-                        .Where(model => model == Model.Fiat500 || model == Model.Fiat500e )
+                        .Where(model => model == Model.Fiat500 || model == Model.Fiat500e)
                         .ToList();
                     }
                     else
                     {
                         comboBoxAracModel.DataSource = Enum.GetValues(typeof(Model))
                         .Cast<Model>()
-                        .Where(model =>  model == Model.Doblo)
+                        .Where(model => model == Model.Doblo)
                         .ToList();
                     }
-                    
+
                 }
             }
         }

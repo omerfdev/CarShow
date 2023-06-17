@@ -52,6 +52,7 @@
             pictureBox1 = new PictureBox();
             colorDialog1 = new ColorDialog();
             openFileDialog1 = new OpenFileDialog();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             groupBoxCar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDownAracHP).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownAracModel).BeginInit();
@@ -138,7 +139,7 @@
             buttonArabaResim.BackgroundImageLayout = ImageLayout.Stretch;
             buttonArabaResim.Location = new Point(6, 451);
             buttonArabaResim.Name = "buttonArabaResim";
-            buttonArabaResim.Size = new Size(286, 136);
+            buttonArabaResim.Size = new Size(200, 136);
             buttonArabaResim.TabIndex = 12;
             buttonArabaResim.UseVisualStyleBackColor = true;
             // 
@@ -252,15 +253,15 @@
             listBox1.ItemHeight = 20;
             listBox1.Location = new Point(319, 24);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(595, 404);
+            listBox1.Size = new Size(540, 384);
             listBox1.TabIndex = 1;
             listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(920, 24);
+            pictureBox1.Location = new Point(446, 421);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(569, 404);
+            pictureBox1.Size = new Size(297, 178);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
@@ -269,11 +270,19 @@
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.Location = new Point(923, 24);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(581, 575);
+            flowLayoutPanel1.TabIndex = 3;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1516, 617);
+            Controls.Add(flowLayoutPanel1);
             Controls.Add(pictureBox1);
             Controls.Add(listBox1);
             Controls.Add(groupBoxCar);
@@ -314,5 +323,6 @@
         private ColorDialog colorDialog1;
         private OpenFileDialog openFileDialog1;
         private Label lblGarantiDurumu;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }
