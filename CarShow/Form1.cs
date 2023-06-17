@@ -57,6 +57,8 @@ namespace CarShow
         {
             FileInfo fi = new FileInfo(((PictureBox)sender).ImageLocation);
             MessageBox.Show(fi.Name);
+
+            // flowLayoutPanel1.Controls.Remove(((PictureBox)sender));
         }
 
         private void buttonAracRenk_Click(object sender, EventArgs e)
