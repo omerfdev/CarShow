@@ -29,62 +29,62 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            groupBoxCar = new GroupBox();
+            grpBoxCar = new GroupBox();
             lblGarantiDurumu = new Label();
-            checkBoxGaranti = new CheckBox();
+            chkBoxGaranti = new CheckBox();
             label4 = new Label();
-            buttonOlustur = new Button();
-            buttonAracResim = new Button();
-            buttonArabaResim = new Button();
+            btnOlustur = new Button();
+            btnAracResim = new Button();
+            btnArabaResim = new Button();
             labelColor = new Label();
-            buttonAracRenk = new Button();
+            btnAracRenk = new Button();
             label2 = new Label();
-            label1 = new Label();
-            numericUpDownAracHP = new NumericUpDown();
-            numericUpDownAracModel = new NumericUpDown();
-            comboBoxKasaTipi = new ComboBox();
-            comboBoxYakitTuru = new ComboBox();
-            comboBoxSanzimanTuru = new ComboBox();
-            comboBoxAracModel = new ComboBox();
-            comboBoxAracMarka = new ComboBox();
-            comboBoxAracTuru = new ComboBox();
-            listBox1 = new ListBox();
-            pictureBox1 = new PictureBox();
-            colorDialog1 = new ColorDialog();
-            openFileDialog1 = new OpenFileDialog();
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            groupBoxCar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDownAracHP).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDownAracModel).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            lblModel = new Label();
+            nmrcUpDownAracHP = new NumericUpDown();
+            nmrcUpDownAracModel = new NumericUpDown();
+            cmbBoxKasaTipi = new ComboBox();
+            cmbBoxYakitTuru = new ComboBox();
+            cmbBoxSanzimanTuru = new ComboBox();
+            cmbBoxAracModel = new ComboBox();
+            cmbBoxAracMarka = new ComboBox();
+            cmbBoxAracTuru = new ComboBox();
+            lstBoxAraba = new ListBox();
+            pcBoxAracResim = new PictureBox();
+            clrDialog = new ColorDialog();
+            opnFlDialogAracResim = new OpenFileDialog();
+            flwPanelAraba = new FlowLayoutPanel();
+            grpBoxCar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)nmrcUpDownAracHP).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nmrcUpDownAracModel).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pcBoxAracResim).BeginInit();
             SuspendLayout();
             // 
-            // groupBoxCar
+            // grpBoxCar
             // 
-            groupBoxCar.Controls.Add(lblGarantiDurumu);
-            groupBoxCar.Controls.Add(checkBoxGaranti);
-            groupBoxCar.Controls.Add(label4);
-            groupBoxCar.Controls.Add(buttonOlustur);
-            groupBoxCar.Controls.Add(buttonAracResim);
-            groupBoxCar.Controls.Add(buttonArabaResim);
-            groupBoxCar.Controls.Add(labelColor);
-            groupBoxCar.Controls.Add(buttonAracRenk);
-            groupBoxCar.Controls.Add(label2);
-            groupBoxCar.Controls.Add(label1);
-            groupBoxCar.Controls.Add(numericUpDownAracHP);
-            groupBoxCar.Controls.Add(numericUpDownAracModel);
-            groupBoxCar.Controls.Add(comboBoxKasaTipi);
-            groupBoxCar.Controls.Add(comboBoxYakitTuru);
-            groupBoxCar.Controls.Add(comboBoxSanzimanTuru);
-            groupBoxCar.Controls.Add(comboBoxAracModel);
-            groupBoxCar.Controls.Add(comboBoxAracMarka);
-            groupBoxCar.Controls.Add(comboBoxAracTuru);
-            groupBoxCar.Location = new Point(12, 12);
-            groupBoxCar.Name = "groupBoxCar";
-            groupBoxCar.Size = new Size(301, 593);
-            groupBoxCar.TabIndex = 0;
-            groupBoxCar.TabStop = false;
-            groupBoxCar.Text = "Cars";
+            grpBoxCar.Controls.Add(lblGarantiDurumu);
+            grpBoxCar.Controls.Add(chkBoxGaranti);
+            grpBoxCar.Controls.Add(label4);
+            grpBoxCar.Controls.Add(btnOlustur);
+            grpBoxCar.Controls.Add(btnAracResim);
+            grpBoxCar.Controls.Add(btnArabaResim);
+            grpBoxCar.Controls.Add(labelColor);
+            grpBoxCar.Controls.Add(btnAracRenk);
+            grpBoxCar.Controls.Add(label2);
+            grpBoxCar.Controls.Add(lblModel);
+            grpBoxCar.Controls.Add(nmrcUpDownAracHP);
+            grpBoxCar.Controls.Add(nmrcUpDownAracModel);
+            grpBoxCar.Controls.Add(cmbBoxKasaTipi);
+            grpBoxCar.Controls.Add(cmbBoxYakitTuru);
+            grpBoxCar.Controls.Add(cmbBoxSanzimanTuru);
+            grpBoxCar.Controls.Add(cmbBoxAracModel);
+            grpBoxCar.Controls.Add(cmbBoxAracMarka);
+            grpBoxCar.Controls.Add(cmbBoxAracTuru);
+            grpBoxCar.Location = new Point(12, 12);
+            grpBoxCar.Name = "grpBoxCar";
+            grpBoxCar.Size = new Size(301, 593);
+            grpBoxCar.TabIndex = 0;
+            grpBoxCar.TabStop = false;
+            grpBoxCar.Text = "Cars";
             // 
             // lblGarantiDurumu
             // 
@@ -94,15 +94,15 @@
             lblGarantiDurumu.Size = new Size(0, 20);
             lblGarantiDurumu.TabIndex = 17;
             // 
-            // checkBoxGaranti
+            // chkBoxGaranti
             // 
-            checkBoxGaranti.AutoSize = true;
-            checkBoxGaranti.Location = new Point(158, 363);
-            checkBoxGaranti.Name = "checkBoxGaranti";
-            checkBoxGaranti.Size = new Size(18, 17);
-            checkBoxGaranti.TabIndex = 16;
-            checkBoxGaranti.UseVisualStyleBackColor = true;
-            checkBoxGaranti.CheckedChanged += checkBoxGaranti_CheckedChanged;
+            chkBoxGaranti.AutoSize = true;
+            chkBoxGaranti.Location = new Point(158, 363);
+            chkBoxGaranti.Name = "chkBoxGaranti";
+            chkBoxGaranti.Size = new Size(18, 17);
+            chkBoxGaranti.TabIndex = 16;
+            chkBoxGaranti.UseVisualStyleBackColor = true;
+            chkBoxGaranti.CheckedChanged += checkBoxGaranti_CheckedChanged;
             // 
             // label4
             // 
@@ -113,35 +113,35 @@
             label4.TabIndex = 15;
             label4.Text = "Garanti Durumu";
             // 
-            // buttonOlustur
+            // btnOlustur
             // 
-            buttonOlustur.Location = new Point(191, 416);
-            buttonOlustur.Name = "buttonOlustur";
-            buttonOlustur.Size = new Size(94, 29);
-            buttonOlustur.TabIndex = 14;
-            buttonOlustur.Text = "Oluştur";
-            buttonOlustur.UseVisualStyleBackColor = true;
-            buttonOlustur.Click += buttonOlustur_Click;
+            btnOlustur.Location = new Point(191, 416);
+            btnOlustur.Name = "btnOlustur";
+            btnOlustur.Size = new Size(94, 29);
+            btnOlustur.TabIndex = 14;
+            btnOlustur.Text = "Oluştur";
+            btnOlustur.UseVisualStyleBackColor = true;
+            btnOlustur.Click += buttonOlustur_Click;
             // 
-            // buttonAracResim
+            // btnAracResim
             // 
-            buttonAracResim.Location = new Point(6, 416);
-            buttonAracResim.Name = "buttonAracResim";
-            buttonAracResim.Size = new Size(108, 29);
-            buttonAracResim.TabIndex = 13;
-            buttonAracResim.Text = "Aracın Resmi";
-            buttonAracResim.UseVisualStyleBackColor = true;
-            buttonAracResim.Click += buttonAracResim_Click;
+            btnAracResim.Location = new Point(6, 416);
+            btnAracResim.Name = "btnAracResim";
+            btnAracResim.Size = new Size(108, 29);
+            btnAracResim.TabIndex = 13;
+            btnAracResim.Text = "Aracın Resmi";
+            btnAracResim.UseVisualStyleBackColor = true;
+            btnAracResim.Click += buttonAracResim_Click;
             // 
-            // buttonArabaResim
+            // btnArabaResim
             // 
-            buttonArabaResim.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            buttonArabaResim.BackgroundImageLayout = ImageLayout.Stretch;
-            buttonArabaResim.Location = new Point(6, 451);
-            buttonArabaResim.Name = "buttonArabaResim";
-            buttonArabaResim.Size = new Size(200, 136);
-            buttonArabaResim.TabIndex = 12;
-            buttonArabaResim.UseVisualStyleBackColor = true;
+            btnArabaResim.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnArabaResim.BackgroundImageLayout = ImageLayout.Stretch;
+            btnArabaResim.Location = new Point(6, 451);
+            btnArabaResim.Name = "btnArabaResim";
+            btnArabaResim.Size = new Size(200, 136);
+            btnArabaResim.TabIndex = 12;
+            btnArabaResim.UseVisualStyleBackColor = true;
             // 
             // labelColor
             // 
@@ -152,15 +152,15 @@
             labelColor.TabIndex = 11;
             labelColor.Text = "                    ";
             // 
-            // buttonAracRenk
+            // btnAracRenk
             // 
-            buttonAracRenk.Location = new Point(6, 313);
-            buttonAracRenk.Name = "buttonAracRenk";
-            buttonAracRenk.Size = new Size(108, 29);
-            buttonAracRenk.TabIndex = 10;
-            buttonAracRenk.Text = "Araç Rengi";
-            buttonAracRenk.UseVisualStyleBackColor = true;
-            buttonAracRenk.Click += buttonAracRenk_Click;
+            btnAracRenk.Location = new Point(6, 313);
+            btnAracRenk.Name = "btnAracRenk";
+            btnAracRenk.Size = new Size(108, 29);
+            btnAracRenk.TabIndex = 10;
+            btnAracRenk.Text = "Araç Rengi";
+            btnAracRenk.UseVisualStyleBackColor = true;
+            btnAracRenk.Click += buttonAracRenk_Click;
             // 
             // label2
             // 
@@ -171,158 +171,158 @@
             label2.TabIndex = 9;
             label2.Text = "Motor Gücü";
             // 
-            // label1
+            // lblModel
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(0, 268);
-            label1.Name = "label1";
-            label1.Size = new Size(52, 20);
-            label1.TabIndex = 8;
-            label1.Text = "Model";
+            lblModel.AutoSize = true;
+            lblModel.Location = new Point(0, 268);
+            lblModel.Name = "lblModel";
+            lblModel.Size = new Size(52, 20);
+            lblModel.TabIndex = 8;
+            lblModel.Text = "Model";
             // 
-            // numericUpDownAracHP
+            // nmrcUpDownAracHP
             // 
-            numericUpDownAracHP.Location = new Point(225, 266);
-            numericUpDownAracHP.Maximum = new decimal(new int[] { 3200, 0, 0, 0 });
-            numericUpDownAracHP.Name = "numericUpDownAracHP";
-            numericUpDownAracHP.Size = new Size(67, 27);
-            numericUpDownAracHP.TabIndex = 7;
-            numericUpDownAracHP.Value = new decimal(new int[] { 1000, 0, 0, 0 });
+            nmrcUpDownAracHP.Location = new Point(225, 266);
+            nmrcUpDownAracHP.Maximum = new decimal(new int[] { 3200, 0, 0, 0 });
+            nmrcUpDownAracHP.Name = "nmrcUpDownAracHP";
+            nmrcUpDownAracHP.Size = new Size(67, 27);
+            nmrcUpDownAracHP.TabIndex = 7;
+            nmrcUpDownAracHP.Value = new decimal(new int[] { 1000, 0, 0, 0 });
             // 
-            // numericUpDownAracModel
+            // nmrcUpDownAracModel
             // 
-            numericUpDownAracModel.Location = new Point(58, 266);
-            numericUpDownAracModel.Maximum = new decimal(new int[] { 3000, 0, 0, 0 });
-            numericUpDownAracModel.Name = "numericUpDownAracModel";
-            numericUpDownAracModel.Size = new Size(69, 27);
-            numericUpDownAracModel.TabIndex = 6;
-            numericUpDownAracModel.Value = new decimal(new int[] { 2005, 0, 0, 0 });
+            nmrcUpDownAracModel.Location = new Point(58, 266);
+            nmrcUpDownAracModel.Maximum = new decimal(new int[] { 3000, 0, 0, 0 });
+            nmrcUpDownAracModel.Name = "nmrcUpDownAracModel";
+            nmrcUpDownAracModel.Size = new Size(69, 27);
+            nmrcUpDownAracModel.TabIndex = 6;
+            nmrcUpDownAracModel.Value = new decimal(new int[] { 2005, 0, 0, 0 });
             // 
-            // comboBoxKasaTipi
+            // cmbBoxKasaTipi
             // 
-            comboBoxKasaTipi.FormattingEnabled = true;
-            comboBoxKasaTipi.Location = new Point(6, 196);
-            comboBoxKasaTipi.Name = "comboBoxKasaTipi";
-            comboBoxKasaTipi.Size = new Size(279, 28);
-            comboBoxKasaTipi.TabIndex = 5;
+            cmbBoxKasaTipi.FormattingEnabled = true;
+            cmbBoxKasaTipi.Location = new Point(6, 196);
+            cmbBoxKasaTipi.Name = "cmbBoxKasaTipi";
+            cmbBoxKasaTipi.Size = new Size(279, 28);
+            cmbBoxKasaTipi.TabIndex = 5;
             // 
-            // comboBoxYakitTuru
+            // cmbBoxYakitTuru
             // 
-            comboBoxYakitTuru.FormattingEnabled = true;
-            comboBoxYakitTuru.Location = new Point(6, 162);
-            comboBoxYakitTuru.Name = "comboBoxYakitTuru";
-            comboBoxYakitTuru.Size = new Size(279, 28);
-            comboBoxYakitTuru.TabIndex = 4;
+            cmbBoxYakitTuru.FormattingEnabled = true;
+            cmbBoxYakitTuru.Location = new Point(6, 162);
+            cmbBoxYakitTuru.Name = "cmbBoxYakitTuru";
+            cmbBoxYakitTuru.Size = new Size(279, 28);
+            cmbBoxYakitTuru.TabIndex = 4;
             // 
-            // comboBoxSanzimanTuru
+            // cmbBoxSanzimanTuru
             // 
-            comboBoxSanzimanTuru.FormattingEnabled = true;
-            comboBoxSanzimanTuru.Location = new Point(6, 128);
-            comboBoxSanzimanTuru.Name = "comboBoxSanzimanTuru";
-            comboBoxSanzimanTuru.Size = new Size(279, 28);
-            comboBoxSanzimanTuru.TabIndex = 3;
+            cmbBoxSanzimanTuru.FormattingEnabled = true;
+            cmbBoxSanzimanTuru.Location = new Point(6, 128);
+            cmbBoxSanzimanTuru.Name = "cmbBoxSanzimanTuru";
+            cmbBoxSanzimanTuru.Size = new Size(279, 28);
+            cmbBoxSanzimanTuru.TabIndex = 3;
             // 
-            // comboBoxAracModel
+            // cmbBoxAracModel
             // 
-            comboBoxAracModel.FormattingEnabled = true;
-            comboBoxAracModel.Location = new Point(6, 94);
-            comboBoxAracModel.Name = "comboBoxAracModel";
-            comboBoxAracModel.Size = new Size(279, 28);
-            comboBoxAracModel.TabIndex = 2;
+            cmbBoxAracModel.FormattingEnabled = true;
+            cmbBoxAracModel.Location = new Point(6, 94);
+            cmbBoxAracModel.Name = "cmbBoxAracModel";
+            cmbBoxAracModel.Size = new Size(279, 28);
+            cmbBoxAracModel.TabIndex = 2;
             // 
-            // comboBoxAracMarka
+            // cmbBoxAracMarka
             // 
-            comboBoxAracMarka.FormattingEnabled = true;
-            comboBoxAracMarka.Location = new Point(6, 60);
-            comboBoxAracMarka.Name = "comboBoxAracMarka";
-            comboBoxAracMarka.Size = new Size(279, 28);
-            comboBoxAracMarka.TabIndex = 1;
-            comboBoxAracMarka.SelectedIndexChanged += comboBoxAracMarka_SelectedIndexChanged;
+            cmbBoxAracMarka.FormattingEnabled = true;
+            cmbBoxAracMarka.Location = new Point(6, 60);
+            cmbBoxAracMarka.Name = "cmbBoxAracMarka";
+            cmbBoxAracMarka.Size = new Size(279, 28);
+            cmbBoxAracMarka.TabIndex = 1;
+            cmbBoxAracMarka.SelectedIndexChanged += comboBoxAracMarka_SelectedIndexChanged;
             // 
-            // comboBoxAracTuru
+            // cmbBoxAracTuru
             // 
-            comboBoxAracTuru.FormattingEnabled = true;
-            comboBoxAracTuru.Location = new Point(6, 26);
-            comboBoxAracTuru.Name = "comboBoxAracTuru";
-            comboBoxAracTuru.Size = new Size(279, 28);
-            comboBoxAracTuru.TabIndex = 0;
+            cmbBoxAracTuru.FormattingEnabled = true;
+            cmbBoxAracTuru.Location = new Point(6, 26);
+            cmbBoxAracTuru.Name = "cmbBoxAracTuru";
+            cmbBoxAracTuru.Size = new Size(279, 28);
+            cmbBoxAracTuru.TabIndex = 0;
             // 
-            // listBox1
+            // lstBoxAraba
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 20;
-            listBox1.Location = new Point(319, 24);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(540, 384);
-            listBox1.TabIndex = 1;
-            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
+            lstBoxAraba.FormattingEnabled = true;
+            lstBoxAraba.ItemHeight = 20;
+            lstBoxAraba.Location = new Point(319, 24);
+            lstBoxAraba.Name = "lstBoxAraba";
+            lstBoxAraba.Size = new Size(540, 384);
+            lstBoxAraba.TabIndex = 1;
+            lstBoxAraba.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
-            // pictureBox1
+            // pcBoxAracResim
             // 
-            pictureBox1.Location = new Point(446, 421);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(297, 178);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
+            pcBoxAracResim.Location = new Point(446, 421);
+            pcBoxAracResim.Name = "pcBoxAracResim";
+            pcBoxAracResim.Size = new Size(297, 178);
+            pcBoxAracResim.SizeMode = PictureBoxSizeMode.StretchImage;
+            pcBoxAracResim.TabIndex = 2;
+            pcBoxAracResim.TabStop = false;
             // 
-            // openFileDialog1
+            // opnFlDialogAracResim
             // 
-            openFileDialog1.FileName = "openFileDialog1";
+            opnFlDialogAracResim.FileName = "openFileDialog1";
             // 
-            // flowLayoutPanel1
+            // flwPanelAraba
             // 
-            flowLayoutPanel1.Location = new Point(923, 24);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(581, 575);
-            flowLayoutPanel1.TabIndex = 3;
+            flwPanelAraba.Location = new Point(923, 24);
+            flwPanelAraba.Name = "flwPanelAraba";
+            flwPanelAraba.Size = new Size(581, 575);
+            flwPanelAraba.TabIndex = 3;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1516, 617);
-            Controls.Add(flowLayoutPanel1);
-            Controls.Add(pictureBox1);
-            Controls.Add(listBox1);
-            Controls.Add(groupBoxCar);
+            Controls.Add(flwPanelAraba);
+            Controls.Add(pcBoxAracResim);
+            Controls.Add(lstBoxAraba);
+            Controls.Add(grpBoxCar);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             Text = "Araba Galeri";
             Load += Form1_Load;
-            groupBoxCar.ResumeLayout(false);
-            groupBoxCar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDownAracHP).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDownAracModel).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            grpBoxCar.ResumeLayout(false);
+            grpBoxCar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)nmrcUpDownAracHP).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nmrcUpDownAracModel).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pcBoxAracResim).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private GroupBox groupBoxCar;
-        private ComboBox comboBoxAracModel;
-        private ComboBox comboBoxAracMarka;
-        private ComboBox comboBoxAracTuru;
-        private ComboBox comboBoxKasaTipi;
-        private ComboBox comboBoxYakitTuru;
-        private ComboBox comboBoxSanzimanTuru;
-        private Label label1;
-        private NumericUpDown numericUpDownAracHP;
-        private NumericUpDown numericUpDownAracModel;
+        private GroupBox grpBoxCar;
+        private ComboBox cmbBoxAracModel;
+        private ComboBox cmbBoxAracMarka;
+        private ComboBox cmbBoxAracTuru;
+        private ComboBox cmbBoxKasaTipi;
+        private ComboBox cmbBoxYakitTuru;
+        private ComboBox cmbBoxSanzimanTuru;
+        private Label lblModel;
+        private NumericUpDown nmrcUpDownAracHP;
+        private NumericUpDown nmrcUpDownAracModel;
         private Label label2;
-        private ListBox listBox1;
-        private PictureBox pictureBox1;
+        private ListBox lstBoxAraba;
+        private PictureBox pcBoxAracResim;
         private Label labelColor;
-        private Button buttonAracRenk;
-        private Button buttonOlustur;
-        private Button buttonAracResim;
-        private Button buttonArabaResim;
-        private CheckBox checkBoxGaranti;
+        private Button btnAracRenk;
+        private Button btnOlustur;
+        private Button btnAracResim;
+        private Button btnArabaResim;
+        private CheckBox chkBoxGaranti;
         private Label label4;
-        private ColorDialog colorDialog1;
-        private OpenFileDialog openFileDialog1;
+        private ColorDialog clrDialog;
+        private OpenFileDialog opnFlDialogAracResim;
         private Label lblGarantiDurumu;
-        private FlowLayoutPanel flowLayoutPanel1;
+        private FlowLayoutPanel flwPanelAraba;
     }
 }

@@ -22,20 +22,20 @@ namespace CarShow
             //comboBoxSanzimanTuru.Items.AddRange(System.Enum.GetNames(typeof(SanzimanTuru)));
             //comboBoxYakitTuru.Items.AddRange(System.Enum.GetNames(typeof(YakitTuru)));
             //comboBoxKasaTipi.Items.AddRange(System.Enum.GetNames(typeof(KasaTipi)));
-            numericUpDownAracHP.Value = 1000;
-            numericUpDownAracModel.Value = 2005;
+            nmrcUpDownAracHP.Value = 1000;
+            nmrcUpDownAracModel.Value = 2005;
             AracTuru[] aracTurleri = (AracTuru[])Enum.GetValues(typeof(AracTuru));
-            comboBoxAracTuru.DataSource = aracTurleri;
+            cmbBoxAracTuru.DataSource = aracTurleri;
             KasaTipi[] kasaTipleri = (KasaTipi[])Enum.GetValues(typeof(KasaTipi));
-            comboBoxKasaTipi.DataSource = kasaTipleri;
+            cmbBoxKasaTipi.DataSource = kasaTipleri;
             Marka[] markalar = (Marka[])Enum.GetValues(typeof(Marka));
-            comboBoxAracMarka.DataSource = markalar;
+            cmbBoxAracMarka.DataSource = markalar;
             SanzimanTuru[] sanzimanTurleri = (SanzimanTuru[])Enum.GetValues(typeof(SanzimanTuru));
-            comboBoxSanzimanTuru.DataSource = sanzimanTurleri;
+            cmbBoxSanzimanTuru.DataSource = sanzimanTurleri;
             YakitTuru[] yakitTurleri = (YakitTuru[])Enum.GetValues(typeof(YakitTuru));
-            comboBoxYakitTuru.DataSource = yakitTurleri;
+            cmbBoxYakitTuru.DataSource = yakitTurleri;
             Model[] modeller = (Model[])Enum.GetValues(typeof(Model));
-            comboBoxAracModel.DataSource = modeller;
+            cmbBoxAracModel.DataSource = modeller;
 
 
             string path = @"C:\Users\omerf\source\repos\CarShow\CarShow\Image\AllCar\";
@@ -47,7 +47,7 @@ namespace CarShow
                 picture.Width = 150;
                 picture.Height = 100;
                 picture.Click += Picture_Click;
-                flowLayoutPanel1.Controls.Add(picture);
+                flwPanelAraba.Controls.Add(picture);
 
             }
 
@@ -83,8 +83,8 @@ namespace CarShow
             if (result == DialogResult.OK)
             {
                 string selectedFilePath = openFileDialog.FileName;
-                buttonArabaResim.BackgroundImage = Image.FromFile(selectedFilePath);
-                pictureBox1.Image = Image.FromFile(selectedFilePath);
+                btnArabaResim.BackgroundImage = Image.FromFile(selectedFilePath);
+                pcBoxAracResim.Image = Image.FromFile(selectedFilePath);
             }
 
         }
@@ -93,25 +93,25 @@ namespace CarShow
         {
             Araba araba = new Araba
             {
-                arabaTuru = (AracTuru)comboBoxAracTuru.SelectedItem,
-                arabaKasaTipi = (KasaTipi)comboBoxKasaTipi.SelectedItem,
-                arabaMarka = (Marka)comboBoxAracMarka.SelectedItem,
-                arabaModel = (Model)comboBoxAracModel.SelectedItem,
-                arabaSanzimanTuru = (SanzimanTuru)comboBoxSanzimanTuru.SelectedItem,
-                arabaYakitTuru = (YakitTuru)comboBoxYakitTuru.SelectedItem,
-                ModelYili = ((short)numericUpDownAracModel.Value),
-                MotorGucu = (short)numericUpDownAracHP.Value,
+                arabaTuru = (AracTuru)cmbBoxAracTuru.SelectedItem,
+                arabaKasaTipi = (KasaTipi)cmbBoxKasaTipi.SelectedItem,
+                arabaMarka = (Marka)cmbBoxAracMarka.SelectedItem,
+                arabaModel = (Model)cmbBoxAracModel.SelectedItem,
+                arabaSanzimanTuru = (SanzimanTuru)cmbBoxSanzimanTuru.SelectedItem,
+                arabaYakitTuru = (YakitTuru)cmbBoxYakitTuru.SelectedItem,
+                ModelYili = ((short)nmrcUpDownAracModel.Value),
+                MotorGucu = (short)nmrcUpDownAracHP.Value,
                 Garanti = lblGarantiDurumu.Text,
                 aracınRengi = labelColor.BackColor,
-                arabaResim = buttonArabaResim.BackgroundImage,
+                arabaResim = btnArabaResim.BackgroundImage,
 
             };
 
-            pictureBox1.Image = araba.arabaResim;
+            pcBoxAracResim.Image = araba.arabaResim;
             secilenAraba.Add(araba);
             araba.ToString();
-            listBox1.DataSource = null;
-            listBox1.DataSource = secilenAraba;
+            lstBoxAraba.DataSource = null;
+            lstBoxAraba.DataSource = secilenAraba;
             Clear();
         }
         public void Clear()
@@ -121,32 +121,32 @@ namespace CarShow
                 switch (control)
                 {
                     case ComboBox:
-                        comboBoxAracTuru.SelectedIndex = -1;
-                        comboBoxKasaTipi.SelectedIndex = -1;
-                        comboBoxAracMarka.SelectedIndex = -1;
-                        comboBoxYakitTuru.SelectedIndex = -1;
-                        comboBoxSanzimanTuru.SelectedIndex = -1;
-                        comboBoxAracModel.SelectedIndex = -1;
+                        cmbBoxAracTuru.SelectedIndex = -1;
+                        cmbBoxKasaTipi.SelectedIndex = -1;
+                        cmbBoxAracMarka.SelectedIndex = -1;
+                        cmbBoxYakitTuru.SelectedIndex = -1;
+                        cmbBoxSanzimanTuru.SelectedIndex = -1;
+                        cmbBoxAracModel.SelectedIndex = -1;
                         break;
 
                     case NumericUpDown:
-                        numericUpDownAracModel.Value = 2005;
-                        numericUpDownAracHP.Value = 1000;
+                        nmrcUpDownAracModel.Value = 2005;
+                        nmrcUpDownAracHP.Value = 1000;
                         break;
 
                     case Button:
-                        buttonArabaResim.BackgroundImage = null;
+                        btnArabaResim.BackgroundImage = null;
                         break;
 
                     case PictureBox:
-                        pictureBox1.Image = null;
+                        pcBoxAracResim.Image = null;
                         break;
 
                     case Label:
                         labelColor.BackColor = Color.White;
                         break;
                     case CheckBox:
-                        checkBoxGaranti.Checked = true;
+                        chkBoxGaranti.Checked = true;
                         break;
                 }
             }
@@ -154,18 +154,18 @@ namespace CarShow
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            if (listBox1.SelectedIndex != -1)
+            if (lstBoxAraba.SelectedIndex != -1)
             {
-                comboBoxAracTuru.Text = secilenAraba[listBox1.SelectedIndex].arabaTuru.ToString();
-                comboBoxKasaTipi.Text = secilenAraba[listBox1.SelectedIndex].arabaKasaTipi.ToString();
-                comboBoxAracMarka.Text = secilenAraba[listBox1.SelectedIndex].arabaMarka.ToString();
-                comboBoxAracModel.Text = secilenAraba[listBox1.SelectedIndex].arabaModel.ToString();
-                comboBoxSanzimanTuru.Text = secilenAraba[listBox1.SelectedIndex].arabaSanzimanTuru.ToString();
-                comboBoxYakitTuru.Text = secilenAraba[listBox1.SelectedIndex].arabaYakitTuru.ToString();
-                numericUpDownAracModel.Value = secilenAraba[listBox1.SelectedIndex].ModelYili;
-                numericUpDownAracHP.Value = secilenAraba[listBox1.SelectedIndex].MotorGucu;
-                labelColor.BackColor = secilenAraba[listBox1.SelectedIndex].aracınRengi;
-                pictureBox1.Image = secilenAraba[listBox1.SelectedIndex].arabaResim;
+                cmbBoxAracTuru.Text = secilenAraba[lstBoxAraba.SelectedIndex].arabaTuru.ToString();
+                cmbBoxKasaTipi.Text = secilenAraba[lstBoxAraba.SelectedIndex].arabaKasaTipi.ToString();
+                cmbBoxAracMarka.Text = secilenAraba[lstBoxAraba.SelectedIndex].arabaMarka.ToString();
+                cmbBoxAracModel.Text = secilenAraba[lstBoxAraba.SelectedIndex].arabaModel.ToString();
+                cmbBoxSanzimanTuru.Text = secilenAraba[lstBoxAraba.SelectedIndex].arabaSanzimanTuru.ToString();
+                cmbBoxYakitTuru.Text = secilenAraba[lstBoxAraba.SelectedIndex].arabaYakitTuru.ToString();
+                nmrcUpDownAracModel.Value = secilenAraba[lstBoxAraba.SelectedIndex].ModelYili;
+                nmrcUpDownAracHP.Value = secilenAraba[lstBoxAraba.SelectedIndex].MotorGucu;
+                labelColor.BackColor = secilenAraba[lstBoxAraba.SelectedIndex].aracınRengi;
+                pcBoxAracResim.Image = secilenAraba[lstBoxAraba.SelectedIndex].arabaResim;
             }
 
         }
@@ -173,13 +173,13 @@ namespace CarShow
         private void checkBoxGaranti_CheckedChanged(object sender, EventArgs e)
         {
 
-            if (checkBoxGaranti.Checked)
+            if (chkBoxGaranti.Checked)
             {
                 lblGarantiDurumu.Text = "Garanti Eklendi";
                 lblGarantiDurumu.BackColor = Color.Green;
             }
 
-            else if (!checkBoxGaranti.Checked)
+            else if (!chkBoxGaranti.Checked)
             {
                 lblGarantiDurumu.Text = "Garanti Eklenmedi";
                 lblGarantiDurumu.BackColor = Color.Red;
@@ -188,16 +188,16 @@ namespace CarShow
 
         private void comboBoxAracMarka_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBoxAracMarka.SelectedItem != null)
+            if (cmbBoxAracMarka.SelectedItem != null)
             {
-                Marka selectedMarka = (Marka)comboBoxAracMarka.SelectedItem;
-                AracTuru selectedAracTur = (AracTuru)comboBoxAracTuru.SelectedItem;
+                Marka selectedMarka = (Marka)cmbBoxAracMarka.SelectedItem;
+                AracTuru selectedAracTur = (AracTuru)cmbBoxAracTuru.SelectedItem;
                 if (selectedMarka == Marka.Ford)
                 {
                     if (selectedAracTur == AracTuru.Binek)
                     {
 
-                        comboBoxAracModel.DataSource = Enum.GetValues(typeof(Model))
+                        cmbBoxAracModel.DataSource = Enum.GetValues(typeof(Model))
                             .Cast<Model>()
                             .Where(model => model == Model.Focus || model == Model.Fiesta)
                             .ToList();
@@ -205,7 +205,7 @@ namespace CarShow
                     else
                     {
 
-                        comboBoxAracModel.DataSource = Enum.GetValues(typeof(Model))
+                        cmbBoxAracModel.DataSource = Enum.GetValues(typeof(Model))
                             .Cast<Model>()
                             .Where(model => model == Model.Tourneo || model == Model.TourneoCustom)
                             .ToList();
@@ -217,7 +217,7 @@ namespace CarShow
                     if (selectedAracTur == AracTuru.Binek)
                     {
 
-                        comboBoxAracModel.DataSource = Enum.GetValues(typeof(Model))
+                        cmbBoxAracModel.DataSource = Enum.GetValues(typeof(Model))
                             .Cast<Model>()
                             .Where(model => model == Model.Golf)
                             .ToList();
@@ -225,7 +225,7 @@ namespace CarShow
                     else
                     {
 
-                        comboBoxAracModel.DataSource = Enum.GetValues(typeof(Model))
+                        cmbBoxAracModel.DataSource = Enum.GetValues(typeof(Model))
                             .Cast<Model>()
                             .Where(model => model == Model.Transpotter || model == Model.Cady)
                             .ToList();
@@ -235,14 +235,14 @@ namespace CarShow
                 {
                     if (selectedAracTur == AracTuru.Binek)
                     {
-                        comboBoxAracModel.DataSource = Enum.GetValues(typeof(Model))
+                        cmbBoxAracModel.DataSource = Enum.GetValues(typeof(Model))
                         .Cast<Model>()
                         .Where(model => model == Model.Megane)
                         .ToList();
                     }
                     else
                     {
-                        comboBoxAracModel.DataSource = Enum.GetValues(typeof(Model))
+                        cmbBoxAracModel.DataSource = Enum.GetValues(typeof(Model))
                         .Cast<Model>()
                         .Where(model => model == Model.Traffic)
                         .ToList();
@@ -253,14 +253,14 @@ namespace CarShow
                 {
                     if (selectedAracTur == AracTuru.Binek)
                     {
-                        comboBoxAracModel.DataSource = Enum.GetValues(typeof(Model))
+                        cmbBoxAracModel.DataSource = Enum.GetValues(typeof(Model))
                         .Cast<Model>()
                         .Where(model => model == Model.Fiat500 || model == Model.Fiat500e)
                         .ToList();
                     }
                     else
                     {
-                        comboBoxAracModel.DataSource = Enum.GetValues(typeof(Model))
+                        cmbBoxAracModel.DataSource = Enum.GetValues(typeof(Model))
                         .Cast<Model>()
                         .Where(model => model == Model.Doblo)
                         .ToList();
